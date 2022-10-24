@@ -1,19 +1,24 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>JavaScript</title>         
-
+        <title>JavaScript</title>
         <script>
-            
-            
+            function selecionado() {
+                document.getElementById('caixaTexto').style.background = "yellow"
+            }
+            function naoSelecionado() {
+                var valorCampo = document.getElementById('caixaTexto').value
 
+                if(valorCampo.length < 3) {
+                    document.getElementById('caixaTexto').style.background = "red"
+                } else {
+                    document.getElementById('caixaTexto').style.background = "green"
+                }
+            }
         </script>
-
     </head>
     <body>
-        
-        <input type="text">
-        
+        <input id="caixaTexto" type="texto" onfocus="selecionado()" onblur="naoSelecionado()" />
     </body>
 </html>
